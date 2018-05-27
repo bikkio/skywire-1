@@ -16,13 +16,13 @@ echo "GO ependencies succesfully installed!"
 echo "Installing GO right now..."
 
 ###### Downloading GO source from Google servers using CURL
-sudo curl -L https://storage.googleapis.com/golang/go1.10.2.linux-armv6l.tar.gz -o go1.10.2.linux-armv6l.tar.gz
+sudo curl -L https://dl.google.com/go/go1.9.2.linux-arm64.tar.gz -o go1.9.2.linux-arm64.tar.gz
 
 ###### Unzip the compressed GO source files
-sudo tar -xvf go1.10.2.linux-armv6l.tar.gz
+sudo tar -xvf go1.9.2.linux-arm64.tar.gz
 
 ###### Remove the downloaded compressed file (not needed anylonger!)
-sudo rm go1.10.2.linux-armv6l.tar.gz
+sudo rm go1.9.2.linux-arm64.tar.gz
 
 ###### Move GO folder to it's destination directory
 sudo mv go /usr/local
