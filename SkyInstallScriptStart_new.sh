@@ -33,7 +33,8 @@
  
 ##### UPDATING RESPOSITORY & UPGRADING OS
 echo "Updating respository and perfoming OS upgrade right now..."
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 echo "Repository Update and OS Upgrade succesfully done!"
  
  
