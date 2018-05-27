@@ -1,34 +1,4 @@
 #!/bin/bash
- 
-#######################################################################################################################################################################
-#######################################################################################################################################################################
-##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT
-##### This script automatically installs the full Skycoin and Skywire software including all dependencies with one push of a button on all OrangePI boards.
-##### To run this script type "sh SkyInstallScriptStart.sh" into a terminal and hit enter! 
-##### For more detailed instructions please consult our tutorial.
-##### For further assistence feel free to contact us! 
-#######################################################################################################################################################################
-##### Version:		1.0  - Get the newest version at https://github.com/TheSKYpeople/SkyInstallScript
-#######################################################################################################################################################################
-##### Team:			       The SKYpeople (Email: TheSKYpeople@protonmail.com - Telegram: @TheSKYpeople)
-##### Licence:		     GNU General Public License v3.0
-##### Donations:	    Skycoin      zrwaGKR8oG7juYLHqgj7zwxH4bGYPEwWTB
-#####				            Ethereum     0x25a4cc8003a626e0b1d0be4626dc33e82a0096a0
-#####				            Bitcoin 	    1EH9Sw1JgnndJGVnUsQkhhiA6XBynqUFuQ
-#######################################################################################################################################################################
-#######################################################################################################################################################################
-
-#######################################################################################################################################################################
-#######################################################################################################################################################################
- 
- 
-
-#######################################################################################################################################################################
-#######################################################################################################################################################################
-###### DON'T CHANGE ANYTHING BELOW THIS LINE (IF YOU DON'T KNOW WHAT YOU ARE DOING)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#######################################################################################################################################################################
-#######################################################################################################################################################################
-
 
  
 ##### UPDATING RESPOSITORY & UPGRADING OS
@@ -133,29 +103,9 @@ sleep 5
 cd $GOPATH/bin
 ###### Starts Skywire Monitor service for the first time / after that command web interface of Monitor works
 ###### This line is to start the monitor on the master node (OrangePI 1) only / Other Orange PIs requiere a different line with the master nodes IP!!!
-./node -connect-manager -manager-address 192.168.0.100:5998 -manager-web 192.168.0.100:8000 -discovery-address discovery.skycoin.net:5999-034b1cd4ebad163e457fb805b3ba43779958bba49f2c5e1e8b062482904bacdb68 -address :5000 -web-port :6001 &> /dev/null 2>&1 &
+./node -connect-manager -manager-address 192.168.1.100:5998 -manager-web 192.168.1.100:8000 -discovery-address discovery.skycoin.net:5999-034b1cd4ebad163e457fb805b3ba43779958bba49f2c5e1e8b062482904bacdb68 -address :5000 -web-port :6001 &> /dev/null 2>&1 &
 echo "Skywire monitor started." 
 echo "You can now open the monitor in your browser: http://192.168.1.101:8000"
-sleep 10
-
-
-##### START SCRIPTS / STOP SCRIPTS
-###### Download start / stop scripts
-echo "Downloading autostart scripts from TheSKYpeople Github" 
-cd ~
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStartSkycoinWallet.sh
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStartSkywirePrimary.sh
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStopSkywire.sh
-
-##### Executing InstallScript Part 2 (SkyInstallScriptRemote.sh) for installation of OrangePI 2-8 via SSH
-###### Downloading Part 2
-cd ~
-wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/SkyInstallScriptRemote.sh
-###### Changing permissions 
-chmod 755 SkyInstallScriptRemote.sh
-###### Execute Part 2
-./SkyInstallScriptRemote.sh
-
 
 
 
